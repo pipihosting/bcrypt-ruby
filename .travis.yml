@@ -4,4 +4,9 @@ before_install:
   - gem install bundler
 rvm:
   - rbx-2.6
+  - rbx-2.7
+  - rbx-2.8
+  - rbx-2.9
+  - rbx-2.10
+  - rbx-2.11
 script: bundle exec rake
