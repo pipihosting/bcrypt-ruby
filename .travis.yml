@@ -2,5 +2,5 @@ language: ruby
 before_install:
   - gem install bundler
 rvm:
-  - rbx-2.5
+  - rbx-2.6
 script: bundle exec rake
