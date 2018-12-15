@@ -176,13 +176,6 @@ char *crypt_ra(const char *key, const char *setting,
 	return _crypt_blowfish_rn(key, setting, (char *)*data, *size);
 }
 
-char *crypt_r(const char *key, const char *setting, void *data)
-{
-	return _crypt_retval_magic(
-		crypt_rn(key, setting, data, CRYPT_OUTPUT_SIZE),
-		setting, (char *)data, CRYPT_OUTPUT_SIZE);
-}
-
 char *crypt(const char *key, const char *setting)
 {
 	static char output[CRYPT_OUTPUT_SIZE];
@@ -266,7 +259,6 @@ char *__crypt_gensalt(const char *prefix, unsigned long count,
 #if defined(__GLIBC__) && defined(_LIBC)
 weak_alias(__crypt_rn, crypt_rn)
 weak_alias(__crypt_ra, crypt_ra)
-weak_alias(__crypt_r, crypt_r)
 weak_alias(__crypt, crypt)
 weak_alias(__crypt_gensalt_rn, crypt_gensalt_rn)
 weak_alias(__crypt_gensalt_ra, crypt_gensalt_ra)
